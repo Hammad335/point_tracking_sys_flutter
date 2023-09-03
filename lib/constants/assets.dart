@@ -1,0 +1,1 @@
+const String aPointTrackingSysTextImage= 'assets/images/point_tracking_sys_text.png';

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "169570280325",
+    "project_id": "point-tracking-sys-flutter",
+    "storage_bucket": "point-tracking-sys-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169570280325:android:d44914b30e5a533b5ddaec",
+        "android_client_info": {
+          "package_name": "com.example.point_tracking_sys_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169570280325-m00n87kkdi8vekhnpo59kno14mug8i0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmYJxDCvLFvyOTOknvI88RBakoukY1XZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169570280325-m00n87kkdi8vekhnpo59kno14mug8i0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
