@@ -1,61 +1,93 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:point_tracking_sys_flutter/constants/assets.dart';
-import 'package:point_tracking_sys_flutter/core/styles/gradients.dart';
+import 'package:point_tracking_sys_flutter/core/styles/styles.dart';
 import 'package:point_tracking_sys_flutter/core/theme/colors.dart';
-import 'package:point_tracking_sys_flutter/core/utils/media_query.dart';
+import 'package:point_tracking_sys_flutter/core/utils/validator.dart';
+import 'package:point_tracking_sys_flutter/core/widgets/widgets.dart';
+import 'package:point_tracking_sys_flutter/features/credentials_screen/controller/credentials_controller.dart';
 
 class CredentialsScreen extends StatelessWidget {
-  const CredentialsScreen({super.key});
+  final CredentialsController _controller = Get.find<CredentialsController>();
+
+  CredentialsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: cWhiteColor,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
-            Container(
+            Image.asset(
+              aAuthScreenBackgroundImage,
+              fit: BoxFit.fill,
+              height: context.height,
               width: context.width,
-              height: 300,
-              decoration: BoxDecoration(
-                color: cPrimaryColor.withOpacity(0.6),
-              ),
             ),
-            Column(
-              children: [
-                SizedBox(height: context.height * 0.18),
-                DottedBorder(
-                  color: cImageBorderColor,
-                  strokeWidth: 1,
-                  dashPattern: const [8, 3],
-                  child: Image.asset(
-                    aPointTrackingSysTextImage,
-                    width: context.width * 0.80,
-                    height: 60,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Container(
-                  height: 200,
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  decoration: BoxDecoration(
-                    gradient: Gradients.authContainerGradient(),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(3),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(25),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              margin: const EdgeInsets.only(top: 120),
+              child: Form(
+                key: _controller.formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Obx(
+                      () => _controller.isSignInMode
+                          ? const SizedBox.shrink()
+                          : CustomTextField(
+                              controller: _controller.userNameController,
+                              hintText: 'User Name',
+                              onValidate: Validator.validateUserName,
+                            ),
+                    ),
+                    const SizedBox(height: 15),
+                    CustomTextField(
+                      controller: _controller.emailController,
+                      hintText: 'Email',
+                      onValidate: Validator.validateEmail,
+                    ),
+                    const SizedBox(height: 15),
+                    CustomTextField(
+                      controller: _controller.passwordController,
+                      hintText: 'Password',
+                      onValidate: Validator.validatePassword,
+                    ),
+                    const SizedBox(height: 50),
+                    Obx(
+                      () => CustomButton(
+                        label: _controller.isSignInMode ? 'Sign in' : 'Signup',
+                        onPressed: _controller.authenticate,
+                        width: 180,
+                        height: 40,
+                        textStyle: TextStyles.authButton18TextStyle,
+                        backgroundColor: cPrimaryColor,
                       ),
                     ),
-                  ),
+                    Container(
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'OR',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                    Obx(
+                      () => CustomTextButton(
+                        label: _controller.isSignInMode
+                            ? 'Create a new account'
+                            : 'Already have an account ? Login',
+                        textStyle: TextStyles.captionPrimary18TextStyle,
+                        onPressed: _controller.toggleAuthMode,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ],
         ),
