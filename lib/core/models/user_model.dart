@@ -23,6 +23,14 @@ class UserModel {
     };
   }
 
+  Map<String, dynamic> toJsonWithoutId() {
+    return {
+      'name': name,
+      'email': email,
+      'isEmailVerified': isEmailVerified,
+    };
+  }
+
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       name: json['name'] as String,

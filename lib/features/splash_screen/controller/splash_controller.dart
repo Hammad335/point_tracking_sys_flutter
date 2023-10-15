@@ -11,11 +11,11 @@ class SplashController extends GetxController {
     _navigateToCredentialsScreen();
   }
 
-  _navigateToCredentialsScreen()async{
-    WidgetsBinding.instance.addPostFrameCallback((_){
-      Get.offAndToNamed(RoutesNames.CredentialsScreen);
+  _navigateToCredentialsScreen() async {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.offAndToNamed(_authRepo.isCurrentUserLoggedIn()
+          ? RoutesNames.NavDrawerScreen
+          : RoutesNames.CredentialsScreen);
     });
-
   }
-
 }

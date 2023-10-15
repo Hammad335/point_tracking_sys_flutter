@@ -35,7 +35,7 @@ class CustomTextField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(borderRadius ?? 4),
                 borderSide: const BorderSide(
                   color: cPrimaryColor,
-                  width: 2,
+                  width: 1.5,
                 ),
               )
             : null,
@@ -44,7 +44,7 @@ class CustomTextField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(borderRadius ?? 4),
                 borderSide: const BorderSide(
                   color: cPrimaryColor,
-                  width: 2,
+                  width: 1.5,
                 ),
               )
             : null,
@@ -53,7 +53,7 @@ class CustomTextField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(borderRadius ?? 4),
                 borderSide: const BorderSide(
                   color: cPrimaryColor,
-                  width: 2,
+                  width: 1.5,
                 ),
               )
             : null,

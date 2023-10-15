@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:point_tracking_sys_flutter/core/widgets/my_drawer.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/controller/nav_drawer_controller.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/home_page.dart';
+import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/saved_points_page.dart';
+import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/select_point_page.dart';
 
 class NavDrawerScreen extends StatelessWidget {
   final NavDrawerController _controller = Get.find<NavDrawerController>();
@@ -41,11 +43,8 @@ class NavDrawerScreen extends StatelessWidget {
   List<Widget> get _pages {
     return [
       HomePage(),
-      Container(
-        margin: const EdgeInsets.only(top: 0),
-        color: Colors.transparent,
-        // child: Text('page 2'),
-      ),
+      SelectPointPage(),
+      SavedPointsPage(),
     ];
   }
 }

@@ -20,4 +20,22 @@ class TextStyles {
       letterSpacing: 1.2,
     );
   }
+
+  static TextStyle get captionWhite18SemiBoldTextStyle {
+    return const TextStyle(
+      color: cWhiteColor,
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 1.2,
+    );
+  }
+
+  static TextStyle get captionWhite16MediumTextStyle {
+    return const TextStyle(
+      color: cWhiteColor,
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1.2,
+    );
+  }
 }

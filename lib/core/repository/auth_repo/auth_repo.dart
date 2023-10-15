@@ -1,15 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:point_tracking_sys_flutter/core/models/models.dart';
+import 'package:point_tracking_sys_flutter/core/repository/database_repo/database_repo.dart';
+import 'package:point_tracking_sys_flutter/routes/routes_names.dart';
 import '../../../services/auth_service/auth_service.dart';
 import '../../../services/database_service/database_service.dart';
 
 class AuthRepo {
   late final AuthService _authService;
-  late final DatabaseService _databaseService;
+  late final DatabaseRepo _databaseRepo;
 
   AuthRepo() {
     _authService = AuthService();
-    _databaseService = DatabaseService();
+    _databaseRepo = DatabaseRepo();
   }
 
   Future<void> registerUser(
@@ -22,7 +24,12 @@ class AuthRepo {
       );
 
       // store user data to firestore
-      await _addToFirestore(user);
+      UserModel userModel = UserModel(
+        uId: user.uid,
+        name: userName,
+        email: email,
+      );
+      await _databaseRepo.storeUserToFirestore(userModel);
     } catch (exception) {
       rethrow;
     }
@@ -62,13 +69,7 @@ class AuthRepo {
   //   }
   // }
 
-  _addToFirestore(User user) async =>
-      await _databaseService.addToFirestore(user);
-
-  String getInitialRoute() {
-    // return _authService.isLoggedIn()
-    //     ? BottomNavScreen.name
-    //     : CredentialsScreen.name;
-    return '';
+  bool isCurrentUserLoggedIn() {
+    return _authService.isLoggedIn();
   }
 }
