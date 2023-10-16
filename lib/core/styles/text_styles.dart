@@ -39,6 +39,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle get captionBlack20MediumTextStyle {
+    return const TextStyle(
+      color: cBlackColor,
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle get captionWhite16MediumTextStyle {
     return const TextStyle(
       color: cWhiteColor,

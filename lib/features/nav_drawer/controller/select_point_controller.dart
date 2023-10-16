@@ -7,6 +7,7 @@ import '../../../core/models/models.dart';
 class SelectPointController extends GetxController {
   late final SavedPointsController _savedPointsController;
   late RxList<Point> allPoints;
+  late RxList<Point> recentlyUsedPoints;
 
   SelectPointController() {
     _init();
@@ -15,11 +16,13 @@ class SelectPointController extends GetxController {
   _init() {
     _savedPointsController = Get.find<SavedPointsController>();
     allPoints = <Point>[].obs;
+    recentlyUsedPoints = <Point>[].obs;
     _getAllPoints();
   }
 
   _getAllPoints() {
     allPoints.value = List.from(points);
+    recentlyUsedPoints.value = List.from(points);
   }
 
   void onFavoritePressed(int index) {
@@ -28,8 +31,7 @@ class SelectPointController extends GetxController {
 
     if (allPoints[index].isFav) {
       _savedPointsController.addPointToSavedPoints(allPoints[index]);
-    }
-    else {
+    } else {
       _savedPointsController.removePointFromSavedPoints(allPoints[index]);
     }
   }
