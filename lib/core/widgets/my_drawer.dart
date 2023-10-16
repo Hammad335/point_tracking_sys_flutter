@@ -15,51 +15,79 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 20,
+      backgroundColor: cWhiteColor,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
       width: context.width * 0.80,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           navHeader(context),
-          ListTile(
-            leading: const Icon(
-              Icons.home,
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Column(
+              children: [
+                ListTile(
+                  leading: const Icon(
+                    Icons.home,
+                    color: cPrimaryColor,
+                    size: 32,
+                  ),
+                  title: Text(
+                    'Home Page',
+                    style: TextStyles.navDrawerItem18TextStyle,
+                  ),
+                  onTap: () {
+                    _controller.changeDrawerIndex(0);
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.train,
+                    color: cPrimaryColor,
+                    size: 32,
+                  ),
+                  title: Text(
+                    'Select Point',
+                    style: TextStyles.navDrawerItem18TextStyle,
+                  ),
+                  onTap: () {
+                    _controller.changeDrawerIndex(1);
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.save,
+                    color: cPrimaryColor,
+                    size: 32,
+                  ),
+                  title: Text(
+                    'Saved Points',
+                    style: TextStyles.navDrawerItem18TextStyle,
+                  ),
+                  onTap: () {
+                    _controller.changeDrawerIndex(2);
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.notification_add,
+                    color: cPrimaryColor,
+                    size: 32,
+                  ),
+                  title: Text(
+                    'Notifications',
+                    style: TextStyles.navDrawerItem18TextStyle,
+                  ),
+                  onTap: () {
+                    // _controller.changeDrawerIndex(3);
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
             ),
-            title: const Text('Home Page'),
-            onTap: () {
-              _controller.changeDrawerIndex(0);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.train,
-            ),
-            title: const Text('Select Point'),
-            onTap: () {
-              _controller.changeDrawerIndex(1);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.save,
-            ),
-            title: const Text('Saved Points'),
-            onTap: () {
-              _controller.changeDrawerIndex(2);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.notification_add,
-            ),
-            title: const Text('Notifications'),
-            onTap: () {
-              // _controller.changeDrawerIndex(3);
-              Navigator.pop(context);
-            },
           ),
         ],
       ),

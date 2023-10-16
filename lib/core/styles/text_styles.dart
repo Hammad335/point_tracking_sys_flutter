@@ -12,6 +12,15 @@ class TextStyles {
     );
   }
 
+  static TextStyle get navDrawerItem18TextStyle {
+    return const TextStyle(
+      color: cBlackColor,
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1.4,
+    );
+  }
+
   static TextStyle get captionPrimary18TextStyle {
     return const TextStyle(
       color: cPrimaryColor,

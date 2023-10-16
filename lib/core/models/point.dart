@@ -2,14 +2,16 @@ class Point {
   final int pointNumber;
   final String driverName;
   final String area;
-  final bool isFav;
+  bool isFav;
 
-  const Point({
+  Point({
     required this.pointNumber,
     required this.driverName,
     required this.area,
     required this.isFav,
   });
+
+  void toggleFavorite() => isFav = !isFav;
 
   Map<String, dynamic> toMap() {
     return {
