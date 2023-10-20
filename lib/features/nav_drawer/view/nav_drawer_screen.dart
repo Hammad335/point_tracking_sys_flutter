@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:point_tracking_sys_flutter/core/widgets/my_drawer.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/controller/nav_drawer_controller.dart';
+import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/current_point_page.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/home_page.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/saved_points_page.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/view/pages/select_point_page.dart';
@@ -45,6 +46,7 @@ class NavDrawerScreen extends StatelessWidget {
       HomePage(),
       SelectPointPage(),
       SavedPointsPage(),
+      CurrentPointPage(),
     ];
   }
 }

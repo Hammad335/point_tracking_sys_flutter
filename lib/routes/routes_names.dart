@@ -4,8 +4,7 @@ class RoutesNames {
   // auth
   static const String CredentialsScreen = '/CredentialsTabScreen';
 
-
   // home
   static const String NavDrawerScreen = '/NavDrawerScreen';
-
+  static const String StudentsInPointScreen = '/StudentsInPointScreen';
 }

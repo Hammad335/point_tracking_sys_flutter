@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:point_tracking_sys_flutter/core/styles/styles.dart';
 import 'package:point_tracking_sys_flutter/features/nav_drawer/controller/select_point_controller.dart';
-
 import '../../../../constants/assets.dart';
 import '../../../../core/models/models.dart';
 import '../../../../core/theme/colors.dart';

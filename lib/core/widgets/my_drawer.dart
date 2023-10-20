@@ -73,6 +73,21 @@ class MyDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   leading: const Icon(
+                    Icons.close_fullscreen,
+                    color: cPrimaryColor,
+                    size: 32,
+                  ),
+                  title: Text(
+                    'Current Point',
+                    style: TextStyles.navDrawerItem18TextStyle,
+                  ),
+                  onTap: () {
+                    _controller.changeDrawerIndex(3);
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(
                     Icons.notification_add,
                     color: cPrimaryColor,
                     size: 32,
@@ -135,12 +150,12 @@ class MyDrawer extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  _controller.currentUser.value!.name,
+                                  _controller.currentUser.value!.name!,
                                   style: TextStyles
                                       .captionWhite18SemiBoldTextStyle,
                                 ),
                                 Text(
-                                  _controller.currentUser.value!.email,
+                                  _controller.currentUser.value!.email!,
                                   style:
                                       TextStyles.captionWhite16MediumTextStyle,
                                 ),

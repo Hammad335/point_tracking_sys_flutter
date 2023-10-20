@@ -1,14 +1,23 @@
 class UserModel {
-  final String uId;
-  final String name;
-  final String email;
-  bool isEmailVerified;
+  String? uId;
+  String? name;
+  String? email;
+  bool? isEmailVerified;
+  String? rollNo;
+  String? department;
 
   UserModel({
-    required this.uId,
+    this.uId,
     required this.name,
     required this.email,
     this.isEmailVerified = false,
+  });
+
+  UserModel.ofPoint({
+    required this.uId,
+    required this.name,
+    required this.rollNo,
+    required this.department,
   });
 
   set emailVerified(bool isEmailVerified) =>

@@ -30,6 +30,33 @@ class TextStyles {
     );
   }
 
+  static TextStyle get captionBlack18TextStyle {
+    return const TextStyle(
+      color: cBlackColor,
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1.2,
+    );
+  }
+
+  static TextStyle get captionBlackMedium18TextStyle {
+    return const TextStyle(
+      color: cBlackColor,
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      letterSpacing: 1.2,
+    );
+  }
+
+  static TextStyle get captionPrimarySemiBold22TextStyle {
+    return const TextStyle(
+      color: cPrimaryColor,
+      fontSize: 38,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 1.2,
+    );
+  }
+
   static TextStyle get captionWhite18SemiBoldTextStyle {
     return const TextStyle(
       color: cWhiteColor,
