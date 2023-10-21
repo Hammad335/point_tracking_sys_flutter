@@ -6,5 +6,5 @@ class RoutesNames {
 
   // home
   static const String NavDrawerScreen = '/NavDrawerScreen';
-  static const String StudentsInPointScreen = '/StudentsInPointScreen';
+  static const String ReportScreen = '/ReportScreen';
 }

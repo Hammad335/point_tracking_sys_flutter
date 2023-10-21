@@ -27,7 +27,7 @@ class Navigate {
       binding: NavDrawerBinding(),
     ),
     GetPage(
-      name: RoutesNames.StudentsInPointScreen,
+      name: RoutesNames.ReportScreen,
       page: () => ReportStudentScreen(),
       binding: ReportStudentBinding(),
     ),

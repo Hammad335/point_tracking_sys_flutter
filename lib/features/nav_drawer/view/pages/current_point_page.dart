@@ -80,7 +80,8 @@ class CurrentPointPage extends StatelessWidget {
                                     height: 30,
                                     child: CustomButton(
                                       label: 'Report',
-                                      onPressed: () {},
+                                      onPressed: () => _controller
+                                          .navigateToReportScreen(user),
                                       height: 30,
                                       width: 150,
                                       backgroundColor: cPrimaryColor,

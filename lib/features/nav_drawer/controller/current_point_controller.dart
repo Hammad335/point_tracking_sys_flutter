@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:point_tracking_sys_flutter/constants/data.dart';
+import 'package:point_tracking_sys_flutter/routes/routes_names.dart';
 import '../../../core/models/models.dart';
 
 class CurrentPointController extends GetxController {
@@ -18,5 +19,12 @@ class CurrentPointController extends GetxController {
       isFav: true,
     ).obs;
     currentPointUsers = pointUsers.obs;
+  }
+
+  navigateToReportScreen(UserModel user) {
+    Get.toNamed(
+      RoutesNames.ReportScreen,
+      arguments: user,
+    );
   }
 }
