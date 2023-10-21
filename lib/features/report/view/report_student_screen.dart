@@ -99,7 +99,7 @@ class ReportStudentScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 height: 40,
                 margin: const EdgeInsets.only(bottom: 10),

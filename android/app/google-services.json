@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "169570280325",
+    "firebase_url": "https://point-tracking-sys-flutter-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "point-tracking-sys-flutter",
     "storage_bucket": "point-tracking-sys-flutter.appspot.com"
   },
