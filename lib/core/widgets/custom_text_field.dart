@@ -9,6 +9,10 @@ class CustomTextField extends StatelessWidget {
   final Color? fillColor;
   final Icon? prefixIcon;
   final double? borderRadius;
+  final int? minLines;
+  final int? maxLines;
+  final double? contentPaddingLeft;
+  final double? contentPaddingTop;
 
   const CustomTextField({
     super.key,
@@ -19,12 +23,18 @@ class CustomTextField extends StatelessWidget {
     this.fillColor,
     this.prefixIcon,
     this.borderRadius,
+    this.minLines,
+    this.maxLines,
+    this.contentPaddingLeft,
+    this.contentPaddingTop,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      minLines: minLines,
+      maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hintText,
         fillColor: fillColor,
@@ -58,7 +68,8 @@ class CustomTextField extends StatelessWidget {
               )
             : null,
         contentPadding: outlineInputBorder
-            ? const EdgeInsets.only(top: 10, left: 10)
+            ? EdgeInsets.only(
+                top: contentPaddingTop ?? 10, left: contentPaddingLeft ?? 10)
             : null,
       ),
       validator: onValidate,

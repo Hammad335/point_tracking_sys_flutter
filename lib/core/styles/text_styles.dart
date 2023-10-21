@@ -82,4 +82,13 @@ class TextStyles {
       letterSpacing: 1.2,
     );
   }
+
+  static TextStyle get captionWhite18MediumTextStyle {
+    return const TextStyle(
+      color: cWhiteColor,
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1.2,
+    );
+  }
 }
